@@ -1,19 +1,21 @@
+/* Root Variables */
 :root {
-    --primary-color: #8B4513;
-    --secondary-color: #A0522D;
-    --accent-color: #DAA520;
-    --text-dark: #333333;
-    --text-light: #FFFFFF;
-    --background: #F5F5DC;
+    --primary-color: #8B4513; /* Brown */
+    --secondary-color: #A0522D; /* Saddle Brown */
+    --accent-color: #DAA520; /* Golden Rod */
+    --text-dark: #333333; /* Dark Text */
+    --text-light: #FFFFFF; /* Light Text */
+    --background: #F5F5DC; /* Beige Background */
 }
 
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Define custom fonts */
+/* Define Custom Fonts */
 @font-face {
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
@@ -39,12 +41,13 @@
     src: url('../fonts/Lato-Regular.ttf') format('truetype');
 }
 
-/* Global styles */
+/* Global Styles */
 body {
     font-family: 'Lato', sans-serif;
     background-color: var(--background);
     color: var(--text-dark);
     line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -59,7 +62,7 @@ p, li, a {
     font-family: 'Tajawal', sans-serif;
 }
 
-/* Header styles */
+/* Header Styles */
 header {
     background: var(--primary-color);
     padding: 1rem 2rem;
@@ -67,6 +70,10 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -96,10 +103,8 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* Hero section */
+/* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('../images/hero-image.jpg') center/cover;
     height: 70vh;
     display: flex;
     align-items: center;
@@ -107,6 +112,26 @@ nav a:hover {
     text-align: center;
     color: var(--text-light);
     padding: 2rem;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../images/hero-image.jpg') center/cover;
+}
+
+.services-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../images/services-background.jpg') center/cover;
+}
+
+.about-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../images/about-background.jpg') center/cover;
+}
+
+.contact-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../images/contact-background.jpg') center/cover;
 }
 
 .hero-content h1 {
@@ -131,15 +156,44 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
-/* Services section */
+/* Price Note Styles */
+.price-note {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.about p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+/* Services Section */
 .services {
     padding: 4rem 2rem;
+    text-align: center;
 }
 
 .services h2 {
-    text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
 }
 
 .services-grid {
@@ -156,6 +210,8 @@ nav a:hover {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 1rem;
 }
 
 .service-card:hover {
@@ -165,8 +221,10 @@ nav a:hover {
 
 .service-card img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
     transition: transform 0.3s ease;
 }
 
@@ -175,40 +233,29 @@ nav a:hover {
 }
 
 .service-card h3 {
-    font-size: 1.5rem;
-    padding: 1rem;
-    color: var(--primary-color);
     font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
 .service-card p {
-    padding: 0 1rem 1.5rem;
-    color: var(--text-dark);
     font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
 }
 
-/* Footer */
-footer {
-    background: var(--primary-color);
-    color: var(--text-light);
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
-}
-
-/* Contact section */
+/* Contact Section */
 .contact-section {
-    text-align: center;
     padding: 4rem 2rem;
+    text-align: center;
 }
 
-.contact-section img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
+.contact-section h2 {
+    font-size: 2.5rem;
     margin-bottom: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
 }
 
 .contact-section form {
@@ -222,6 +269,9 @@ footer {
 .contact-section label {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    text-align: left;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .contact-section input,
@@ -230,6 +280,14 @@ footer {
     border: 1px solid var(--primary-color);
     border-radius: 5px;
     font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
 }
 
 .contact-section button {
@@ -248,7 +306,50 @@ footer {
     background: var(--accent-color);
 }
 
-/* Responsive design */
+/* WhatsApp Floating Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; /* WhatsApp Green */
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-button span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2.5rem;
